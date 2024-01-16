@@ -1,4 +1,6 @@
 
+@Library('my-shared-library') _
+
 pipeline {
 	agent any
 
@@ -9,7 +11,11 @@ pipeline {
 			steps{
 				script{
 
-					git branch: 'main', url: 'https://github.com/adityakamble12/training_java_app.git'
+					gitCheckout(
+			
+						branch: "main",
+						url: "https://github.com/adityakamble12/jenkins_shared_lib.git"
+)
 
 }
 	
